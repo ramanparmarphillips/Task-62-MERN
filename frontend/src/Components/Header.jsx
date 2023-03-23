@@ -7,13 +7,14 @@ import { logout, reset } from '../features/auth/authSlice'
 function Header() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const { user,} = useSelector((state) => state.auth)
+    const { user } = useSelector((state) => state.auth)
 
     const onLogout = () => {
         dispatch(logout())
         dispatch(reset())
         navigate('/')
     }
+
   return (
     <div>
         <header className='header' >
@@ -25,7 +26,7 @@ function Header() {
                     <li>
                         <button className='btn' onClick={onLogout}>
                             <FaSignOutAlt />
-                            <span>Logout</span>
+                            Logout
                         </button>
                    
                     </li>
@@ -34,7 +35,7 @@ function Header() {
                         <li>
                             <Link to='/login'>
                                 <FaSignInAlt />
-                                <span>Login</span>
+                                Login
                             </Link>
                         </li>
                         <li>
@@ -43,7 +44,8 @@ function Header() {
                                 <span>Register</span>
                             </Link>
                         </li>
-                </>)}
+                </>
+                )}
             </ul>
         </header>
       

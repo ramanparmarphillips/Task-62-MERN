@@ -75,14 +75,15 @@ const loginUser = asyncHandler(async (req, res) => {
 //! ADD HERE THE ROLE OF THE USER (ADMIN, EMPLOYER ID, ETC) in payload
 
 const   getMe = asyncHandler(async (req, res) => {
-    const {_id, name, email, role, employeeId } = await User.findById(req.user.id)
-    res.status(200).json({
-        id: _id,
-        name,
-        email,
-        role,
-        employeeId
-    })
+    res.status(200).json(req.user)
+    // const {_id, name, email, role, employeeId } = await User.findById(req.user.id)
+    // res.status(200).json({
+    //     id: _id,
+    //     name,
+    //     email,
+    //     role,
+    //     employeeId
+    // })
 
 })
 

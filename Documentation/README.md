@@ -25,4 +25,27 @@ GoalHERO!™ has a range of functional and non-functional requirements to ensure
 
 The design patterns of GoalHERO!™ is based on simplicity and ease of use. The application is designed to be intuitive and easy to navigate, with a simple user interface that allows users to quickly create, edit, and delete goals. Many of the components are designed to be reusable, which allows for the application to be easily scaled and expanded as the application grows.
 
+The Login and Register pages are perfect example of this, as the layout of the page doesn't change allowing for the user to gain familiarity with the interface. The only difference is the text that is displayed on the page, which is determined by the functionality the user is performing (login or register). This allows for the application to be easily expanded to include additional pages, such as a forgot password page, without having to change the layout of the page.
+
+
+Login Page:
+
 ![](./Frame%201.png)
+
+Register Page:
+
+![](./Frame%202.png)
+
+This design continues throughout the application, with the layout of the page and general aesthetics remaining the same, but the text and functionality changing depending on the page. The goal of the application is to provide a simple and intuitive user interface that is easy to navigate and understand, and this design pattern helps to achieve this goal.
+
+User Dashboard:
+
+![](./User%20Dashboard.png)
+
+
+Admin Dashboard:
+
+![](./Admin%20Dashboad.png) 
+
+Thematically they are the same with only with expanded functionality allowing the admin to monitor the users on the platform.
+

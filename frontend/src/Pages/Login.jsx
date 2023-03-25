@@ -1,72 +1,82 @@
-import React from 'react'
+// Description: Login page
+
+//Dependencies
 import { useState, useEffect } from 'react'
-import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { FaSignInAlt } from 'react-icons/fa'
+
+//State from Redux store
 import {login, reset} from '../features/auth/authSlice';
+
+//Components
 import Spinner from '../Components/Spinner'
 
-
+//Error notifications
+import { toast } from 'react-toastify'
 
 function Login() {
-    const [formData, setFormData] = useState({
-        email:     '',
-        password:  ''
-    })
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-const onSubmit = (e) => {
+  //State for form data
+  const [formData, setFormData] = useState({
+    email:     '',
+    password:  ''
+  })
+  const { email, password } = formData
+  const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
+
+  //Submit form
+  const onSubmit = (e) => {
     e.preventDefault()
     const userData = {
         email,
         password
     }
     dispatch(login(userData))
-}
+  }
 
-    const onChange = (e) => {
-        setFormData((prevState) => ({
-            ...prevState,
-            [e.target.name]: e.target.value
-        }) )
+  //Handle form changes
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }) )
+  }
+
+  //Redirect to dashboard if logged in
+  useEffect(() => {
+    if (isError) {
+      toast.error(message)
     }
 
-    const { email, password } = formData
-
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-
-    //! maybe isAdmin
-    const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
-
-
-    useEffect(() => {
-      if (isError) {
-        toast.error(message)
-      }
-      if (isSuccess || user) {
-        navigate('/')
-      }
-      dispatch(reset())
-    }, [user, isError, isSuccess, message, navigate, dispatch])
-
-    if (isLoading) {
-        return <Spinner />
+    if (isSuccess || user) {
+      navigate('/')
     }
+
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
+
+  //Show spinner if loading
+  if (isLoading) {
+      return <Spinner />
+  }
 
   return (
     <>
-        <section className='heading'>
-            <h1>
-                <FaSignInAlt />
-                Login
-            </h1>
-            <p>Login!</p>
-        </section>
+      <section className='heading'>
+        <h1>
+            Login
+            <span className='loginIcon'>
+            <FaSignInAlt />
+            </span>
+        </h1>
+        <p>Login here and start setting goals today!</p>
+      </section>
 
-        <section className='form'>
+      <section className='form'>
         <form onSubmit={onSubmit}>
-        
           <div className='form-group'>
             <input
               type='email'
@@ -78,6 +88,7 @@ const onSubmit = (e) => {
               onChange={onChange}
             />
           </div>
+
           <div className='form-group'>
             <input
               type='password'
@@ -89,11 +100,13 @@ const onSubmit = (e) => {
               onChange={onChange}
             />
           </div>
+
           <div className='form-group'>
             <button type='submit' className='btn btn-block'>
               Submit
             </button>
           </div>
+          
         </form>
       </section>
     </>

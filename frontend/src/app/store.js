@@ -1,3 +1,4 @@
+// This file is used to create the Redux store
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from '../features/auth/authSlice';
 import goalReducer from '../features/goals/goalSlice';

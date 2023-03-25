@@ -1,65 +1,75 @@
-import React from 'react'
+// Description: Register page
+
+//Dependencies
 import { useState, useEffect } from 'react'
-import { FaUser } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { FaUser } from 'react-icons/fa'
+
+//State from Redux store
 import {register, reset} from '../features/auth/authSlice';
+
+//Components
 import Spinner from '../Components/Spinner'
+
+//Error notifications
+import { toast } from 'react-toastify'
 
 
 function Register() {
-    const [formData, setFormData] = useState({
-        name:      '',
-        email:     '',
-        password:  '',
-        password2: ''
-    })
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-    
-    
-    const { name, email, password, password2 } = formData
+  //State for form data
+  const [formData, setFormData] = useState({
+      name:      '',
+      email:     '',
+      password:  '',
+      password2: ''
+  })
+  const { name, email, password, password2 } = formData
+  const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
 
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-
-    //! maybe isAdmin
-    const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
-
-    const onSubmit = (e) => {
-        e.preventDefault()
-        if (password !== password2) {
-            toast.error('Passwords do not match')
-        } else {
-          const userData = {
-            name,
-            email,
-            password
-          }
-          dispatch(register(userData))
-        }
+  //Submit form
+  const onSubmit = (e) => {
+    e.preventDefault()
+    if (password !== password2) {
+        toast.error('Passwords do not match')
+    } else {
+      const userData = {
+        name,
+        email,
+        password
       }
+      dispatch(register(userData))
+    }
+  }
 
-      useEffect(() => {
-        if (isError) {
-          toast.error(message)
-        }
-        if (isSuccess || user) {
-          navigate('/')
-        }
-        dispatch(reset())
-      }, [user, isError, isSuccess, message, navigate, dispatch])
-      
-      const onChange = (e) => {
-          setFormData((prevState) => ({
-              ...prevState,
-              [e.target.name]: e.target.value
-          }) )
-      }
+  //Navigate to dashboard if logged in
+  useEffect(() => {
+    if (isError) {
+      toast.error(message)
+    }
+    if (isSuccess || user) {
+      navigate('/')
+    }
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
 
-      if (isLoading) {
-        return <Spinner />
-      }
+  //Handle form changes
+  const onChange = (e) => {
+        setFormData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }) )
+  }
+
+  //Show spinner if loading
+  if (isLoading) {
+      return <Spinner />
+  }
+
+
   return (
     <>
         <section className='heading'>
@@ -67,7 +77,7 @@ function Register() {
                 <FaUser />
                 Register
             </h1>
-            <p>Please create an account</p>
+            <p>Create your free GoalHERO!™ account today!</p>
         </section>
 
         <section className='form'>

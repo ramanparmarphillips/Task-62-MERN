@@ -1,6 +1,7 @@
+//Database connection and setup
 const mongoose = require('mongoose');
-// const dotenv = require('dotenv').config();
 
+//Connect to MongoDB
 const connectDB = async () => {
     try {
         const conn = await mongoose.connect(process.env.MONGO_URI);
@@ -11,10 +12,4 @@ const connectDB = async () => {
     }
 }
 
-
 module.exports = connectDB;
-// , {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true
-// }

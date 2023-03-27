@@ -324,31 +324,37 @@ body::-webkit-scrollbar-thumb
 .bbb {
   position: relative;
   width: 1.1vw;
-  height: 1.1vw;
-  background: #4fc2dc96;
+  height:1.1vw;
+  background: #0051ffcc;
   margin: 0 4px;
   border-radius: 50%;
   animation: animate 15s linear infinite;
   animation-duration: calc(520s / var(--i));
   box-shadow: 
-    0 0 0 10px #4fc3dc44,
-    0 0 50px #4fc2dccc,
-    0 0 100px #4fc2dc9e;
-  z-index: -1000
+    0 0 0 10px #1d65ff93,
+    0 0 50px #1d65ff9c,
+    0 0 100px #1d65ff2f;
+
+  z-index: -1000;
+
   
 }
+
+ 
+
+
 
 .red {
     background: #ff2d76bd;
     box-shadow: 
-    0 0 0 10px #ff2d7544,
-    0 0 50px #ff2d76a5,
-    0 0 100px #ff2d76a3;
+    0 0 0 10px #ff2d7657,
+    0 0 50px #ff2d764d,
+    0 0 100px #ff2d763d;
   
 }
 
 .yellow {
-    background: #e8e237ab;
+    background: #e8e237;
     box-shadow: 
     0 0 0 10px #e8e33744,
     0 0 50px #e8e237a1,
@@ -357,25 +363,26 @@ body::-webkit-scrollbar-thumb
 }
 
 .green {
-    background: #00ff00a1;
+    background: #00ff00d0;
     box-shadow: 
-    0 0 0 10px #00ff0044,
+    0 0 0 10px #00ff0065,
     0 0 50px #00ff00a1,
     0 0 100px #00ff008c;
-  
+}
 
+.purple {
+    background: #ff00ff;
+    box-shadow: 
+    0 0 0 10px #ff00ff93,
+    0 0 50px #ff00ffa9,
+    0 0 100px #ff00ff8c;
 }
 
 @keyframes animate 
 {
-  0% 
-  {
-    transform: translateY(140vh) scale(0);
-  }
-  100% 
-  {
-    transfrorm: translateY(20vh) scale(1);
-  }
+  0%    {transform: translateY(140vh) scale(0)}
+
+  100%  {transform: translateY(-20vh) scale(1)}
 }
 
 .heading {

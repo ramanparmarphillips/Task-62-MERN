@@ -96,7 +96,7 @@ function Dashboard() {
     
         <section className="content">
           <h3 className='title'>GoalHERO!™ Users:</h3>
-          <div className='userContainer'>
+          <div className='userContainer aaa'>
             {users.map(user => (
               <div className='user' key={user._id}>
               <h4><span className='label'>Name:</span> {user.name}{isAdmin.name === user.name ? <p className='you'>You</p> : <p></p>}</h4>
@@ -121,7 +121,7 @@ function Dashboard() {
                     <div className='user' key={goal._id}>
                       {/* <p>Name: {matchingUser.name}</p> */}
                       {matchingUser.name === isAdmin.name ? <p className='you'>You</p> : <h4>{matchingUser.name}:</h4>}
-                      <p><span className='label'>Goal:</span> {goal.text}</p>
+                      <p className='goaltext'><span className='label '>Goal:</span> {goal.text}</p>
                       <p><span className='label'>Created on:</span> {new Date(goal.createdAt).toLocaleDateString('en-GB')}</p>
                       <button onClick={() => dispatch(deleteGoal(goal._id))} className="close">
                         <AiFillDelete />

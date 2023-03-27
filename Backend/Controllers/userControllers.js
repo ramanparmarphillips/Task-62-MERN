@@ -1,3 +1,4 @@
+// Description: This file contains all the functions for the user routes
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')

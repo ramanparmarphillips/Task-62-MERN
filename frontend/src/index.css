@@ -1,3 +1,21 @@
+/* ========================== */
+/*         CSS CONTENTS       */
+/* ========================== */
+/* 1. GENERAL                 */
+/* 2. SCROLLBAR               */
+/* 3. HEADER                  */
+/* 4. GOALS                   */
+/* 5. BUTTONS                 */
+/* 6. SPINNER                 */
+/* 7. MEDIA QUERIES           */
+/* ========================== */
+
+
+/* ========================== */
+/*       1. GENERAL           */
+/* ========================== */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
@@ -42,17 +60,35 @@ h3 {
 
 }
 
-h2 {
-  text-transform: capitalize;
+/* ========================== */
+/*       2. SCROLLBAR         */
+/* ========================== */
+
+body::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  background-color: #F5F5F5;
 }
 
-.container {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
+body::-webkit-scrollbar
+{
+  width: 3px;
+  background-color: #F5F5F5;
 }
+
+body::-webkit-scrollbar-thumb
+{
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0);
+  background-color: #000;
+}
+
+
+
+/* ========================== */
+/*       3. HEADER            */
+/* ========================== */
 
 .header {
   display: flex;
@@ -91,16 +127,24 @@ h2 {
   margin-right: 5px;
 }
 
+/* WELCOME SECTION */
+
 .heading {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 50px;
   padding:  20px;
+  background:#f3f3f3;
+  border-radius: 10px;
 }
 
 .heading p {
   color: #828282;
 }
+
+/* ========================== */
+/*         4. GOALS           */
+/* ========================== */
 
 .goals {
   display: grid;
@@ -116,7 +160,15 @@ h2 {
   border-radius: 10px;
 
 }
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
 
+/* DELETE BUTTONS */
  .close {
   position: absolute;
   top: 10px;
@@ -130,8 +182,36 @@ h2 {
 
 .user {
   position : relative;
+  border: #000 2px solid;
+  padding: 20px;
+  border-radius: 12px;
 }
 
+.userContainer {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  gap: 10px;
+  background-color: #e5e5e5;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+/* "YOU" LABEL */
+.you {
+  background-color: #000;
+  color: #fff;
+  width: min-content;
+  margin: 0 auto;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+
+/* ========================== */
+/*          5. FORM           */
+/* ========================== */
 
 .form,
 .content {
@@ -159,6 +239,10 @@ h2 {
   display: block;
   margin: 0 0 5px 3px;
 }
+
+/* ========================== */
+/*        5. BUTTONS          */
+/* ========================== */
 
 .btn {
   padding: 10px 20px;
@@ -195,6 +279,10 @@ h2 {
   transform: scale(0.98);
 }
 
+/* ========================== */
+/*        6. SPINNER          */
+/* ========================== */
+
 .loadingSpinnerContainer {
   position: fixed;
   top: 0;
@@ -227,6 +315,12 @@ h2 {
   }
 }
 
+/* ========================== */
+/*     7. MEDIA QUERIES       */
+/* ========================== */
+
+
+
 @media (max-width: 600px) {
   .form {
     width: 90%;
@@ -242,33 +336,8 @@ h2 {
 }
 
 
-.userContainer {
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0 auto;
-  gap: 10px;
-  background-color: #e5e5e5;
-  padding: 20px;
-  border-radius: 10px;
 
-}
 
-.user {
-  border: #000 2px solid;
-  /* width: 100%; */
-  padding: 20px;
-  border-radius: 12px;
-
-}
-
-.you {
-  background-color: #000;
-  color: #fff;
-  width: min-content;
-  margin: 0 auto;
-  padding: 3px 8px;
-  border-radius: 5px;
-}
 
 .Footer {
   position: fixed;
@@ -280,25 +349,6 @@ h2 {
   text-align: center;
 }
 
-body::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 5px;
-	background-color: #F5F5F5;
-}
-
-body::-webkit-scrollbar
-{
-	width: 3px;
-	background-color: #F5F5F5;
-}
-
-body::-webkit-scrollbar-thumb
-{
-	border-radius: 5px;
-	-webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0);
-	background-color: #000;
-}
 
 .body{
   padding-bottom: 100px;
@@ -340,7 +390,30 @@ body::-webkit-scrollbar-thumb
   
 }
 
- 
+.goaltext {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 600px) {
+  .bbb {
+    width: 30px;
+    height: 8px;
+    margin: 0 1px;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .content {
+    width: 90vw;
+  }
+
+  .aaa {
+    display: flex;
+    flex-direction: column;
+  }
+}
+  
+
 
 
 
@@ -385,11 +458,6 @@ body::-webkit-scrollbar-thumb
   100%  {transform: translateY(-20vh) scale(1)}
 }
 
-.heading {
-  background:#f3f3f3;
-  border-radius: 10px;
-
-}
 
 .close:hover {
   color: red;

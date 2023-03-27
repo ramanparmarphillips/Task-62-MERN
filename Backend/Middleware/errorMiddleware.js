@@ -1,3 +1,4 @@
+// Description: Error handling middleware, used to handle errors in the backend and send a response to the frontend
 const errorHandler = (err, req, res, next) => {
     const statusCode = res.statusCode ? res.statusCode : 500
   
@@ -9,6 +10,6 @@ const errorHandler = (err, req, res, next) => {
     })
   }
   
-  module.exports = {
-    errorHandler,
-  }
+module.exports = {
+  errorHandler,
+}

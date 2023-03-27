@@ -47,5 +47,8 @@ This design continues throughout the application, with the layout of the page an
 
 ![](./Admin%20Dashboad.png) 
 
-Thematically they are the same with only with expanded functionality allowing the admin to monitor the users on the platform.
+Thematically and aesthetically they are the same with expanded functionality allowing the admin to monitor the users on the platform and their activity
 
+## Conclusion
+
+In conclusion, GoalHERO!™ is an innovative and user-friendly goal setting software designed to help individuals, teams, and organizations achieve their goals. The system architecture of the app is robust and secure, built using a combination of technologies including React, Express, Redux, MongoDB, Bcrypt, JWT, and Axios. The application has been designed with simplicity and ease of use in mind, ensuring that users can quickly create, edit, and delete goals. The functional and non-functional requirements have been carefully considered, ensuring that the application is scalable, reliable, and secure. The design patterns and wireframes have been carefully crafted to provide a simple and intuitive user interface that is easy to navigate and understand. Overall, GoalHERO!™ is an excellent tool for anyone looking to set and achieve their goals, and it is sure to become a valuable asset for individuals and organizations alike.

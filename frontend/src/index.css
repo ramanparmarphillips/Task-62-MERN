@@ -34,6 +34,13 @@ body {
 
 }
 
+
+
+.loginIcon {
+  margin-top: 10px;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -49,6 +56,12 @@ ul {
 
 li {
   line-height: 2.2;
+}
+
+.title {
+  margin-top: 10px;
+  text-decoration: underline solid 2px
+
 }
 
 h1,
@@ -84,8 +97,6 @@ body::-webkit-scrollbar-thumb
   background-color: #000;
 }
 
-
-
 /* ========================== */
 /*       3. HEADER            */
 /* ========================== */
@@ -101,6 +112,12 @@ body::-webkit-scrollbar-thumb
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   
+}
+
+.logo {
+  padding: 0 20px;
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
 .header ul {
@@ -136,21 +153,25 @@ body::-webkit-scrollbar-thumb
   padding:  20px;
   background:#f3f3f3;
   border-radius: 10px;
-}
+}  
 
 .heading p {
   color: #828282;
-}
+}  
 
 /* ========================== */
 /*         4. GOALS           */
 /* ========================== */
+.goaltext {
+  text-transform: capitalize;
+}
 
 .goals {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
+
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+}  
 
 .goal {
   background-color: #e6e6e6;
@@ -159,18 +180,18 @@ body::-webkit-scrollbar-thumb
   position: relative;
   border-radius: 10px;
 
-}
+}  
 .container {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
-}
+}  
 
 /* DELETE BUTTONS */
  .close {
-  position: absolute;
+  position: absolute; 
   top: 10px;
   right: 15px;
   cursor: pointer;
@@ -178,14 +199,22 @@ body::-webkit-scrollbar-thumb
   background: none;
   font-size: 1.1rem;
   transition: all 0.3s ease;
+}  
+
+.close:hover {
+  color: red;
 }
+
+.label {
+  font-weight: bold;
+}  
 
 .user {
   position : relative;
   border: #000 2px solid;
   padding: 20px;
   border-radius: 12px;
-}
+}  
 
 .userContainer {
   display:grid;
@@ -196,7 +225,7 @@ body::-webkit-scrollbar-thumb
   padding: 20px;
   border-radius: 10px;
 
-}
+}  
 
 /* "YOU" LABEL */
 .you {
@@ -206,7 +235,7 @@ body::-webkit-scrollbar-thumb
   margin: 0 auto;
   padding: 3px 8px;
   border-radius: 5px;
-}
+}  
 
 
 /* ========================== */
@@ -217,11 +246,11 @@ body::-webkit-scrollbar-thumb
 .content {
   width: 70%;
   margin: 0 auto;
-}
+}  
 
 .form-group {
   margin-bottom: 10px;
-}
+}  
 
 .form-group input,
 .form-group textarea,
@@ -232,13 +261,13 @@ body::-webkit-scrollbar-thumb
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: inherit;
-}
+}  
 
 .form-group label {
   text-align: left;
   display: block;
   margin: 0 0 5px 3px;
-}
+}  
 
 /* ========================== */
 /*        5. BUTTONS          */
@@ -259,25 +288,25 @@ body::-webkit-scrollbar-thumb
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-}
+}  
 
 .btn svg {
   margin-right: 8px;
-}
+}  
 
 .btn-reverse {
   background: #fff;
   color: #000;
-}
+}  
 
 .btn-block {
   width: 100%;
   margin-bottom: 20px;
-}
+}  
 
 .btn:hover {
   transform: scale(0.98);
-}
+}  
 
 /* ========================== */
 /*        6. SPINNER          */
@@ -295,7 +324,7 @@ body::-webkit-scrollbar-thumb
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-}
+}  
 
 .loadingSpinner {
   width: 64px;
@@ -304,40 +333,59 @@ body::-webkit-scrollbar-thumb
   border-color: #000000 transparent #ff0000 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
-}
+}  
 
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-  }
+  }  
   100% {
     transform: rotate(360deg);
-  }
-}
+  }  
+}  
 
 /* ========================== */
 /*     7. MEDIA QUERIES       */
 /* ========================== */
 
+@media screen and (max-width: 600px) {
+  .bbb {
+    width: 30px;
+    height: 8px;
+    margin: 0 1px;
+  }  
+  body {
+    overflow-x: hidden;
+  }  
+  .content {
+    width: 90vw;
+  }  
+
+  .aaa {
+    display: flex;
+    flex-direction: column;
+  }  
+}  
+  
 
 
 @media (max-width: 600px) {
   .form {
     width: 90%;
-  }
+  }  
 
   .heading h1 {
     font-size: 2rem;
-  }
+  }  
 
   .heading p {
     font-size: 1.5rem;
-  }
-}
+  }  
+}  
 
-
-
-
+/* ========================== */
+/*         8. FOOTER          */
+/* ========================== */
 
 .Footer {
   position: fixed;
@@ -347,16 +395,12 @@ body::-webkit-scrollbar-thumb
   color: #fff;
   padding: 20px;
   text-align: center;
-}
+}  
 
 
-.body{
-  padding-bottom: 100px;
-}
-
-.label {
-  font-weight: bold;
-}
+/* ========================== */
+/*     9. BUBBLE ANIMATION    */
+/* ========================== */
 
 .bubble-container {
   position: absolute;
@@ -365,12 +409,12 @@ body::-webkit-scrollbar-thumb
   top: 0;
   left: 0;
   z-index: -1000;
-}
+}  
 
 .bubbles {
-  /* position: relative; */
   display: flex
 }
+
 .bbb {
   position: relative;
   width: 1.1vw;
@@ -384,38 +428,8 @@ body::-webkit-scrollbar-thumb
     0 0 0 10px #1d65ff93,
     0 0 50px #1d65ff9c,
     0 0 100px #1d65ff2f;
-
-  z-index: -1000;
-
-  
-}
-
-.goaltext {
-  text-transform: capitalize;
-}
-
-@media screen and (max-width: 600px) {
-  .bbb {
-    width: 30px;
-    height: 8px;
-    margin: 0 1px;
-  }
-  body {
-    overflow-x: hidden;
-  }
-  .content {
-    width: 90vw;
-  }
-
-  .aaa {
-    display: flex;
-    flex-direction: column;
-  }
-}
-  
-
-
-
+  z-index: -1000;  
+}  
 
 .red {
     background: #ff2d76bd;
@@ -454,28 +468,9 @@ body::-webkit-scrollbar-thumb
 @keyframes animate 
 {
   0%    {transform: translateY(140vh) scale(0)}
-
   100%  {transform: translateY(-20vh) scale(1)}
 }
 
-
-.close:hover {
-  color: red;
-}
-
-.title {
-  margin-top: 10px;
-  text-decoration: underline solid 2px
-
-}
-
-.logo {
-  padding: 0 20px;
-  font-weight: bolder;
-  font-size: 1.5rem;
-}
-
-.loginIcon {
-  margin-top: 10px;
-  padding: 0;
+.body{
+  padding-bottom: 100px;
 }

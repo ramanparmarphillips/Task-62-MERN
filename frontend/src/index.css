@@ -8,6 +8,8 @@
 /* 5. BUTTONS                 */
 /* 6. SPINNER                 */
 /* 7. MEDIA QUERIES           */
+/* 8. FOOTER                  */
+/* 9. BUBBLE ANIMATION        */
 /* ========================== */
 
 
@@ -33,8 +35,6 @@ body {
   color: #000;
 
 }
-
-
 
 .loginIcon {
   margin-top: 10px;
